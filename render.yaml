@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: office-bus-attendance
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DB_PATH
+        value: /data/attendance.db
+    disk:
+      name: attendance-data
+      mountPath: /data
+      sizeGB: 1
